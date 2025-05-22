@@ -1,5 +1,6 @@
 import './NewsBlog.css';
 import { useState } from 'react';
+import Modal from './Modal';
 
 function NewsBlog(){
 
@@ -17,6 +18,9 @@ function NewsBlog(){
 
     let [like, setLike] = useState([0,0,0]);
     
+    let [showModal, setShowModal] = useState(false);
+
+    let [selectedTitle, setSelectedTitle] = useState('');
 
     return (
         <div>
@@ -27,10 +31,13 @@ function NewsBlog(){
 
             <div className='post-list'>
                 <h4 onClick={()=>{
+                    setShowModal(!showModal);
+                    setSelectedTitle(news[0]);
+                }}>{news[0]} <span onClick={()=>{
                     let change = [...like];
                     change[0]=like[0]+1;
                     setLike(change);
-                }}>{news[0]} 💖<span>{like[0]}</span></h4>
+                }}>💖{like[0]}</span></h4>
                 <p>내용 무</p>
 
                 
@@ -43,22 +50,37 @@ function NewsBlog(){
             
             <div className='post-list'>
                 <h4 onClick={()=>{
+                    setShowModal(!showModal);
+                    setSelectedTitle(news[1]);
+                }}>{news[1]} <span onClick={()=>{
                     let change = [...like];
                     change[1]=like[1]+1;
                     setLike(change);
-                }}>{news[1]} 💖<span>{like[1]}</span></h4>
+                }}>💖{like[1]}</span></h4>
                 <p>내용 무</p>
             </div>
             
             <div className='post-list'>
                 <h4 onClick={()=>{
+                    setShowModal(!showModal);
+                    setSelectedTitle(news[2]);
+                }}>{news[2]} <span onClick={(event)=>{
+                    event.stopPropagation();    //전파를 막겠다
+                    //속해있는 부모 요소의 이벤트 처리까지 전파되는걸 막겠다
+                    //<h4><span></span></h4>
+
                     let change = [...like];
                     change[2]=like[2]+1;
                     setLike(change);
-                }}>{news[2]} 💖<span>{like[2]}</span></h4>
+                }}>💖{like[2]}</span></h4>
                 <p>내용 무</p>
             </div>
 
+            {
+                // showModal == true ? <Modal/> : null
+                showModal && <Modal title={selectedTitle}/>
+            }
+            
         </div>
     );
 }
