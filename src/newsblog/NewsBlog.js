@@ -91,6 +91,14 @@ function NewsBlog(){
                                 setLike(change);
                             }}>💖{like[index]}</span></h4>
                             <p>내용 무</p>
+                            <button onClick={()=>{
+                                let temp = [...news];
+                                temp.splice(index,1);
+                                setNews(temp);
+
+                                like.splice(index, 1);
+
+                            }}>삭제</button>
                         </div>
                     )
                 })
