@@ -9,11 +9,12 @@ import './App.css';
 // import Props01 from './study/Props01';
 // import Props02 from './study/Props02';
 // import Practice03 from './practice/Practice03/Practice03';
-// import NewsBlog from './newsblog/NewsBlog';
+import NewsBlog from './newsblog/NewsBlog';
 // import Practice04 from './practice/Practice04/Practice04';
 // import FoodMarket from './foodmarket/pages/FoodMarket';
 import ProMain01 from './project-elements/ProMain01';
 import WorkOut from './project-elements/WorkOut';
+import Practice05 from './practice/Practice05/Practice05';
 
 function App() {
 
@@ -29,8 +30,9 @@ function App() {
   // return <NewsBlog/>;
   // return <Practice04/>;
   // return <FoodMarket/>;
-  return <ProMain01/>;
+  // return <ProMain01/>;
   // return <WorkOut/>;
+  return <Practice05/>;
 
 
   // return (
