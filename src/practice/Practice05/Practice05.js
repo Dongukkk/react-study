@@ -5,6 +5,7 @@ function Practice05(){
 
     let [colorArr,setColorArr] = useState(['black']);
 
+
     return (
         <>
             <div>
@@ -49,8 +50,8 @@ function Practice05(){
             </div>
             <div>
                 {
-                    colorArr.map((color)=>{
-                        return <Box bgColor= {color}/>;
+                    colorArr.map((color, index)=>{
+                        return <Box bgColor= {color} index = {index} colorArr={colorArr} setColorArr={setColorArr}/>;
                     
                     })
             }
