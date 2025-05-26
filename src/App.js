@@ -11,7 +11,7 @@ import './App.css';
 // import Practice03 from './practice/Practice03/Practice03';
 import NewsBlog from './newsblog/NewsBlog';
 // import Practice04 from './practice/Practice04/Practice04';
-// import FoodMarket from './foodmarket/pages/FoodMarket';
+import FoodMarket from './foodmarket/pages/FoodMarket';
 import ProMain01 from './project-elements/ProMain01';
 import WorkOut from './project-elements/WorkOut';
 import Practice05 from './practice/Practice05/Practice05';
@@ -29,10 +29,10 @@ function App() {
   // return <Practice03/>;
   // return <NewsBlog/>;
   // return <Practice04/>;
-  // return <FoodMarket/>;
+  return <FoodMarket/>;
   // return <ProMain01/>;
   // return <WorkOut/>;
-  return <Practice05/>;
+  // return <Practice05/>;
 
 
   // return (

@@ -9,7 +9,14 @@ import food1 from '../images/food1.jpg';
 import food2 from '../images/food2.jpg';
 import food3 from '../images/food3.jpg';
 
+import foodsData from '../data/foodsData';
+import { useState } from 'react';
+
+import FoodCard from '../components/FoodCard';
+
 function FoodMarket(){
+
+    let [foods, setFoods] = useState(foodsData);
 
     return (
         <div>
@@ -45,29 +52,27 @@ function FoodMarket(){
 
                 <Container>
                     <Row>
-                        <Col md={4} sm={6}>
+                        {
+                            foods.map((item, index)=>{     
+                                return(
+                                    <Col md={4} sm={6}>
+                                        {/* <FoodCard index={index} foods={foods}/> */}
+                                        <FoodCard index={index} food={item}/>
+                                    </Col>
+                                );
+                            })
+                        }
+                        
+                        {/* <Col md={4} sm={6}>
                             <Card style={{ width: '18rem' }}>
-                                {/* <Card.Img variant="top" src={food1} /> */}
-                                <Card.Img variant="top" src='/images/food1.jpg' />
-                                <Card.Body>
-                                    <Card.Title>Card Title</Card.Title>
-                                    <Card.Text>
-                                        Some quick example text to build on the card title and make up the
-                                        bulk of the card's content.
-                                    </Card.Text>
-                                    <Button variant="primary">Go somewhere</Button>
-                                </Card.Body>
-                            </Card>
-                        </Col>
-                        <Col md={4} sm={6}>
-                            <Card style={{ width: '18rem' }}>
-                                {/* <Card.Img variant="top" src={food2} /> */}
                                 <Card.Img variant="top" src={process.env.PUBLIC_URL + '/images/food2.jpg'} />
                                 <Card.Body>
-                                    <Card.Title>Card Title</Card.Title>
+                                    <Card.Title>{foods[1].title}</Card.Title>
                                     <Card.Text>
-                                        Some quick example text to build on the card title and make up the
-                                        bulk of the card's content.
+                                        {foods[1].content}
+                                    </Card.Text>
+                                    <Card.Text>
+                                        {foods[1].price}
                                     </Card.Text>
                                     <Button variant="primary">Go somewhere</Button>
                                 </Card.Body>
@@ -75,18 +80,19 @@ function FoodMarket(){
                         </Col>
                         <Col md={4} sm={6}>
                             <Card style={{ width: '18rem' }}>
-                                {/* <Card.Img variant="top" src={food3} /> */}
-                                <Card.Img variant="top" src='/images/food3.jpg' />
+                                <Card.Img variant="top" src={food3} />
                                 <Card.Body>
-                                    <Card.Title>Card Title</Card.Title>
+                                    <Card.Title>{foods[2].title}</Card.Title>
                                     <Card.Text>
-                                        Some quick example text to build on the card title and make up the
-                                        bulk of the card's content.
+                                        {foods[2].content}
+                                    </Card.Text>
+                                    <Card.Text>
+                                        {foods[2].price}
                                     </Card.Text>
                                     <Button variant="primary">Go somewhere</Button>
                                 </Card.Body>
                             </Card>
-                        </Col>
+                        </Col> */}
                         
                     </Row>
                 </Container>
