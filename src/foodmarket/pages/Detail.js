@@ -201,10 +201,9 @@ function Detail({ foods }) {
                     </p>
 
                     
-                    <Button variant={food.stockCount==0 ? "danger" : "primary" } onClick={()=>{
-                        food.stockCount=food.stockCount-orderCount;
-                        setOrderCount(0);
-                    }}>{food.stockCount==0 ? "품절": "주문하기"}</Button>
+                    <Button variant={food.stockCount==0 ? "danger" : "primary" }>
+                        {food.stockCount==0 ? "품절": "주문하기"}
+                    </Button>
                     
                 </Col>
             </Row>
