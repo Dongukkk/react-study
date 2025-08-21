@@ -16,6 +16,7 @@ import ProMain01 from './project-elements/ProMain01';
 import WorkOut from './project-elements/WorkOut';
 import Practice05 from './practice/Practice05/Practice05';
 import Practice06 from './practice/Practice06/Practice06';
+import AppRS from './react_spring/AppRS';
 
 function App() {
 
@@ -30,12 +31,12 @@ function App() {
   // return <Practice03/>;
   // return <NewsBlog/>;
   // return <Practice04/>;
-  return <FoodMarket/>;
+  //return <FoodMarket/>;
   // return <ProMain01/>;
   // return <WorkOut/>;
   // return <Practice05/>;
   // return <Practice06/>;
-
+return <AppRS/>;
 
   // return (
   //   <div className="App">
